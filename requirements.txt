@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+
+    tools {
+        // Use Maven configured in Jenkins
+        maven "MAVEN_HOME"
+    }
+
+    stages {
+
+        stage('Clean Workspace') {
+            steps {
+                deleteDir()
+            }
+        }
+
+        stage('Git Clone & Clean') {
+            steps {
+                bat "git clone https://github.com/Bharath-chandra997/maven_webproject"
+                bat "mvn clean -f maven_webproject/pom.xml"
+            }
+        }
+
+        stage('Install') {
+            steps {
+                bat "mvn install -f maven_webproject/pom.xml"
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat "mvn test -f maven_webproject/pom.xml"
+            }
+        }
+
+        stage('Package') {
+            steps {
+                bat "mvn package -f maven_webproject/pom.xml"
+            }
+        }
+    }
+}
