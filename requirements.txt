@@ -76,3 +76,47 @@ taskkill /PID <PID> /F
 
 # Alternative port
 docker run --name nagios -d -p 8090:80 jasonrivers/nagios
+
+
+//user name = nagiosadmin
+//password = magios
+
+
+
+
+
+//email notification
+open : https://myaccount.google.com/apppasswords
+
+•	Select:
+o	App: Other (Custom name)
+o	Name: Jenkins-Demo
+•	Click Generate
+•	Copy the 16-digit app password
+o	Save it in a secure location (e.g., Notepad)
+
+ 2.  Jenkins Plugin Installation
+i. Open Jenkins Dashboard
+ii. Navigate to:
+•	Manage Jenkins → System
+iii. Install Plugin:
+•	Search for and install:
+o	Email Extension Plugin
+
+3. Configure Jenkins Global Email Settings
+  Go to:
+•	Manage Jenkins → Configure System
+________________________________________
+A. E-mail Notification Section
+Field	Value
+SMTP Server	smtp.gmail.com
+Use SMTP Auth	✅ Enabled
+User Name	Your Gmail ID (e.g., archanareddykmit@gmail.com)
+Password	Paste the 16-digit App Password
+Use SSL	✅ Enabled
+SMTP Port	465
+Reply-To Address	Your Gmail ID (same as above)
+➤ Test Configuration
+•	Click: Test configuration by sending test e-mail
+•	Provide a valid email address to receive a test mail
+•	✅ Should receive email from Jenkins
