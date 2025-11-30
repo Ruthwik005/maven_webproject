@@ -307,11 +307,65 @@ automatically it will build itself
 
 
 
+//AWS SHORTCUT
+click on Module
+scroll & clk launch lab
+start lab
+click on AWS (green color)
+click on EC2 (in recently visited)
+Launch instance
+🗹 give name
+click on ubuntu
+create new keypair & set
+(RSA
+& .pem)
+In network settings
+click on create security group
+Allow SSH & HTTPS & HTTP
+then click on launch instance
+then click on green color
+click on connect
+go to SSH client
+copy SSH example.
+go to .pem file downloaded folder
+— through cmd
+paste the copied one & click on enter
+tap yes.
+(Ubuntu opened)
+-->type the below commands
+sudo apt update -y
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
+docker --version
+sudo apt install git -y
+git --version
+
+-->then run below commands.
+cd ~
+git clone https://github.com/kumaraswamybakkashetti/login-app2.git
+cd login-app2
+ls
+
+-->then run below commands
+nano Dockerfile
+paste the below one & save
+FROM nginx:alpine
+COPY /usr/share/nginx/html
+EXPOSE 80
+SAVE THE FILE
+
+-->then run below commands in CMD
+sudo docker build -t loginapp
+sudo docker run -d -p 80:80 --name hello-name loginapp
+(it gives success)
+then go to AWS page
+copy public IPV4 address
+& open new tab & paste
+***********YOUR APPLICATION IS LIVE NOW***********
 
 
-
-
-
+************************************************************************************************
 Title: Deploying a Static Login HTML Page on AWS EC2 Using Docker (Step-by-Step)
 
 NOTE: This file explains every step in detail. You can follow it like a lab manual.
